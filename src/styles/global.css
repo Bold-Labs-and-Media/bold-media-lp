@@ -1,2 +1,50 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@theme {
+  /* Colors */
+  --color-*: initial;
+  --color-background: #fffdeb; /* Website background */
+  --color-primary: #e30613; /* Primary brand color */
+  --color-foreground: #6c6354; /* Foreground text color */
+  --color-neutral-light: #eee1c1; /* Neutral color for card */
+  --color-neutral-dark: #f8f0d5; /* Another neutral color for card */
+  --color-white: #ffffff; /* White */
+  --color-heading-on-primary: #fbf4f4; /* Text color for headings over primary background */
+  --color-icon: #231f20; /* Accordion icon color */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-transparent: transparent;
+
+  /* Typography */
+  /* Font family */
+  /* Too many fonts...
+
+    - Inter
+    - Kanit
+    - Bricolage Grotesque
+    - Semantic
+    - Space Grotesk
+    */
+
+  /* Font Size */
+  --text-*: initial;
+  --text-xs: 0.875rem; /* 14px */
+  --text-sm: 1rem; /* 16px */
+  --text-base: 1.125rem; /* 18px */
+  --text-lg: 1.25rem; /* 20px */
+  --text-xl: 1.375rem; /* 22px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.75rem; /* 28px */
+  --text-4xl: 1.875rem; /* 30px */
+  --text-5xl: 2.5rem; /* 40px */
+  --text-6xl: 2.6875rem; /* 43px */
+  --text-7xl: 2.8125rem; /* 45px */
+  --text-8xl: 3.375rem; /* 54px */
+  --text-9xl: 8rem; /* 128px */
+  --text-10xl: 11.875rem; /* 190px */
+
+  /* Animation */
+}
+
+/* Keyframes */
