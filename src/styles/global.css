@@ -17,6 +17,7 @@ body {
 }
 
 :root {
+  /* Color */
   --background: #ffffff;
   --foreground: #252422;
   --primary: #e30613;
@@ -26,6 +27,10 @@ body {
   --black: #000;
   --white: #fff;
   --transparent: transparent;
+
+  /* Size */
+  --screen-max-width: 1240px;
+  --screen-inline-padding: 1rem;
 }
 
 @theme inline {
@@ -37,6 +42,9 @@ body {
   --color-primary-foreground: var(--primary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-transparent: var(--transparent);
+  --color-white: var(--white);
+  --color-black: var(--black);
 
   /* Typography */
   /* Font family */
