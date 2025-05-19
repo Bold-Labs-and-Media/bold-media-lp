@@ -35,6 +35,8 @@ body {
   --tablist: #f1f5f9;
   --tablist-foreground: #64748b;
   --tab-trigger-active: #faf9f5;
+  --input-border: #e2e8f0;
+  --input: #faf9f5;
 
   /* Size */
   --screen-max-width: 1240px;
@@ -61,6 +63,8 @@ body {
   --color-tablist: var(--tablist);
   --color-tablist-foreground: var(--tablist-foreground);
   --color-tab-trigger-active: var(--tab-trigger-active);
+  --color-input-border: var(--input-border);
+  --color-input: var(--input);
   /* Typography */
   /* Font family */
   /* Too many fonts...
@@ -106,4 +110,7 @@ body {
   padding-inline: var(--screen-inline-padding);
 }
 
+.why-us-bg {
+  background: linear-gradient(90deg, #d62e33 0%, #fa7921 100%);
+}
 /* Keyframes */
