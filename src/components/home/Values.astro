@@ -1,0 +1,45 @@
+---
+import { Heart } from "lucide-react";
+import ValueItem from "./ValueItem.astro";
+---
+
+<section class="wrapper pt-4 pb-16 md:pb-16">
+  <div class="flex items-center gap-4 justify-center">
+    <div class="rounded-full p-3 w-fit bg-orange-500/10">
+      <Heart className="text-orange-500" size={32} />
+    </div>
+    <h3 class="font-bold text-2xl text-grey-100">Nossos Valores</h3>
+  </div>
+  <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+    <ValueItem
+      description="Buscamos constantemente novas formas de contar histórias e transmitir informações."
+      title="Inovação e Criatividade"
+    />
+    <ValueItem
+      description="Comprometemo-nos com a verdade e a ética em todas as nossas ações."
+      title="Transparência e Integridade"
+    />
+    <ValueItem
+      description="Trabalhamos para construir um legado positivo para as próximas gerações africanas."
+      title="Compromisso com o Futuro de África"
+    />
+    <ValueItem
+      description="Promovemos práticas sustentáveis e representatividade em tudo o que fazemos."
+      title="Sustentabilidade e Inclusão"
+    />
+  </ul>
+  <div
+    class="rounded-4xl bg-azure-200/5 p-8 space-y-4 mt-16 md:mt-14 text-grey-100"
+  >
+    <h4 class="font-bold text-2xl">Oportunidade no Mercado</h4>
+    <p>
+      África está a emergir como um dos continentes com maior potencial de
+      crescimento economico e social. Há uma demanda crescente por narrativas
+      locais, autênticas e positivas.
+    </p>
+    <p>
+      Angola, em especial, se destaca como um mercado estratégico para a
+      expansão da comunicação em África.
+    </p>
+  </div>
+</section>

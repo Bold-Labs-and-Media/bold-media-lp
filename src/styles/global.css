@@ -31,6 +31,7 @@ body {
   --grey-100: #252422;
   --cyan-300: #2a9d8f;
   --azure-200: #1d3557;
+  --orange-500: #fa7921;
 
   /* Size */
   --screen-max-width: 1240px;
@@ -53,6 +54,7 @@ body {
   --color-grey-100: var(--grey-100);
   --color-cyan-300: var(--cyan-300);
   --color-azure-200: var(--azure-200);
+  --color-orange-500: var(--orange-500);
 
   /* Typography */
   /* Font family */
