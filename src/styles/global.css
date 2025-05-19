@@ -32,6 +32,9 @@ body {
   --cyan-300: #2a9d8f;
   --azure-200: #1d3557;
   --orange-500: #fa7921;
+  --tablist: #f1f5f9;
+  --tablist-foreground: #64748b;
+  --tab-trigger-active: #faf9f5;
 
   /* Size */
   --screen-max-width: 1240px;
@@ -55,6 +58,9 @@ body {
   --color-cyan-300: var(--cyan-300);
   --color-azure-200: var(--azure-200);
   --color-orange-500: var(--orange-500);
+  --color-tablist: var(--tablist);
+  --color-tablist-foreground: var(--tablist-foreground);
+  --color-tab-trigger-active: var(--tab-trigger-active);
   /* Typography */
   /* Font family */
   /* Too many fonts...
