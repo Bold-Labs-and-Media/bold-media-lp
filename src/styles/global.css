@@ -27,6 +27,8 @@ body {
   --black: #000;
   --white: #fff;
   --transparent: transparent;
+  --neutral-900: #111827;
+  --grey-100: #252422;
 
   /* Size */
   --screen-max-width: 1240px;
@@ -45,6 +47,8 @@ body {
   --color-transparent: var(--transparent);
   --color-white: var(--white);
   --color-black: var(--black);
+  --color-neutral-900: var(--neutral-900);
+  --color-grey-100: var(--grey-100);
 
   /* Typography */
   /* Font family */
