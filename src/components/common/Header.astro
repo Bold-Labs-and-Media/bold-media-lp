@@ -1,6 +1,7 @@
 ---
 import { LogoSVG } from "@/lib/assets";
 import { getLangFromUrl, useTranslations } from "@/lib/utils";
+import LanguageSelector from "../interactive/language-selector";
 import NavMenu from "../interactive/nav-menu";
 import { Link } from "../ui/link";
 
@@ -8,23 +9,27 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<header class="py-4 wrapper">
-  <div class="flex items-center justify-between">
-    <LogoSVG class="text-primary" />
-    <NavMenu client:load>
-      <Link variant="ghost" className="p-0 h-auto" href="#about"
-        >{t("header.nav1")}</Link
-      >
-      <Link variant="ghost" className="p-0 h-auto" href="#areas"
-        >{t("header.nav2")}</Link
-      >
-      <Link variant="ghost" className="p-0 h-auto" href="#strategies"
-        >{t("header.nav3")}</Link
-      >
-      <Link variant="ghost" className="p-0 h-auto" href="#contact"
-        >{t("header.nav4")}</Link
-      >
-      <Link href="#contact" className="w-fit mx-auto">{t("header.nav5")}</Link>
-    </NavMenu>
-  </div>
-</header>
+<div class="fixed top-0 left-0 right-0 z-20 bg-background/80 backdrop-blur-sm">
+  <header class="py-4 wrapper">
+    <div class="flex items-center justify-between">
+      <LogoSVG class="text-primary" />
+      <NavMenu client:load>
+        <Link variant="ghost" className="p-0 h-auto" href="#about"
+          >{t("header.nav1")}</Link
+        >
+        <Link variant="ghost" className="p-0 h-auto" href="#areas"
+          >{t("header.nav2")}</Link
+        >
+        <Link variant="ghost" className="p-0 h-auto" href="#strategies"
+          >{t("header.nav3")}</Link
+        >
+        <Link variant="ghost" className="p-0 h-auto" href="#contact"
+          >{t("header.nav4")}</Link
+        >
+        <LanguageSelector client:load />
+        <Link href="#contact" className="w-fit mx-auto">{t("header.nav5")}</Link
+        >
+      </NavMenu>
+    </div>
+  </header>
+</div>

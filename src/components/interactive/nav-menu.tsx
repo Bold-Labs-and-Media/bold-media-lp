@@ -37,7 +37,7 @@ export default function NavMenu({ children }: PropsWithChildren) {
       <nav className="hidden md:flex gap-8 items-center">{children}</nav>
       <div
         ref={sidebar}
-        className="md:hidden h-full w-0 fixed left-0 top-0 bg-black/90 overflow-x-hidden duration-500 z-10 backdrop-blur-sm"
+        className="md:hidden h-screen w-0 fixed left-0 top-0 bg-black/90 overflow-x-hidden duration-500 z-30"
       >
         <Button
           className="absolute top-5 right-5"
@@ -47,7 +47,7 @@ export default function NavMenu({ children }: PropsWithChildren) {
         >
           <X size={42} />
         </Button>
-        <nav className="relative top-1/4 w-full text-center mt-8 text-white flex flex-col gap-10">
+        <nav className="relative  top-1/4 w-full text-center mt-8 text-white flex flex-col gap-10">
           {children}
         </nav>
       </div>
