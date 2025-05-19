@@ -1,16 +1,19 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/lib/utils";
 import { Eye, Target } from "lucide-react";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="about" class="wrapper py-16 md:pt-24 md:pb-12">
   <div class="space-y-14 text-grey-100 mb-16 md:mb-14">
     <h2 class="font-bold text-4xl md:text-[36px] text-center">
-      <span class="border-b-4 border-primary">Sobre</span>
-      Nós
+      <span class="border-b-4 border-primary">{t("about.title1")}</span>
+      {t("about.title2")}
     </h2>
     <p class="text-center max-w-[768px] mx-auto">
-      A BOLD MEDIA é um grupo de comunicação angolano que está a transformar a
-      narrativa africana através da inovação e da criatividade.
+      {t("about.subtitle")}
     </p>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -19,11 +22,12 @@ import { Eye, Target } from "lucide-react";
         <div class="rounded-full p-3 w-fit bg-primary/10">
           <Target size={32} className="text-primary" />
         </div>
-        <h3 class="text-grey-100 text-2xl font-bold">Missão</h3>
+        <h3 class="text-grey-100 text-2xl font-bold">
+          {t("about.mission-title")}
+        </h3>
       </div>
       <p>
-        Reescrever a narrativa africana por meio de uma media inovadora,
-        conectada e focada na transformação de mercados e pessoas.
+        {t("about.mission-subtitle")}
       </p>
     </div>
     <div class="border shadow-md border-cyan-300 rounded-md p-8 space-y-4">
@@ -31,11 +35,12 @@ import { Eye, Target } from "lucide-react";
         <div class="rounded-full p-3 w-fit bg-azure-200/10">
           <Eye size={32} className="text-azure-200" />
         </div>
-        <h3 class="text-grey-100 text-2xl font-bold">Visão</h3>
+        <h3 class="text-grey-100 text-2xl font-bold">
+          {t("about.vision-title")}
+        </h3>
       </div>
       <p>
-        Ser o maior grupo de media angolano com impacto global, liderando a
-        comunicação e inovação em África.
+        {t("about.vision-subtitle")}
       </p>
     </div>
   </div>

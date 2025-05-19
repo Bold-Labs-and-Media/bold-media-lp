@@ -1,7 +1,11 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/lib/utils";
 import Image from "astro/components/Image.astro";
 import { ArrowDown } from "lucide-react";
 import { Link } from "../ui/link";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="relative">
@@ -10,13 +14,12 @@ import { Link } from "../ui/link";
   >
     <div class="space-y-6 md:space-y-7">
       <p class="text-lg text-neutral-900 font-medium md:text-8xl md:font-bold">
-        Amplifique a sua voz em África
+        {t("hero.title")}
       </p>
       <p class="text-base md:text-sm text-grey-100">
-        Junte-se à revolução da comunicação africana e faça parte da nova
-        narrativa que está a transformar o continente.
+        {t("hero.subtitle")}
       </p>
-      <Link href="#about">Conheça-nos <ArrowDown /></Link>
+      <Link href="#about">{t("hero.cta")}<ArrowDown /></Link>
     </div>
     <Image
       class="hidden md:block rounded-2xl"

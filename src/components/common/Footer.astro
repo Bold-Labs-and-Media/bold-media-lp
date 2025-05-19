@@ -1,9 +1,31 @@
 ---
 import { InstagramIcon, LinkedInIcon, LogoSVG } from "@/lib/assets";
+import { getLangFromUrl, useTranslations } from "@/lib/utils";
 import { ArrowUp } from "lucide-react";
 import { Link } from "../ui/link";
 
 const year = new Date().getFullYear();
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const areas = [
+  {
+    text: t("footer.area1"),
+    href: "#",
+  },
+  {
+    text: t("footer.area2"),
+    href: "https://boldlabs.ao",
+  },
+  {
+    text: t("footer.area3"),
+    href: "#",
+  },
+  {
+    text: t("footer.area4"),
+    href: "#",
+  },
+];
 ---
 
 <footer class="bg-foreground py-12">
@@ -12,8 +34,7 @@ const year = new Date().getFullYear();
       <div class="space-y-6">
         <LogoSVG />
         <p>
-          Um grupo de comunicação angolano comprometido em amplificar as
-          narrativas africanas e reposicionar a imagem de África no mundo.
+          {t("footer.description")}
         </p>
         <ul class="flex items-center gap-4">
           <li>
@@ -41,32 +62,21 @@ const year = new Date().getFullYear();
         </ul>
       </div>
       <div class="space-y-4">
-        <p class="font-bold text-lg">Áreas de Atuação</p>
+        <p class="font-bold text-lg">{t("footer.areas")}</p>
         <ul class="space-y-2">
-          <li>
-            <Link variant="ghost" className="p-0 h-auto" href="#area"
-              >Angola Today</Link
-            >
-          </li>
-          <li>
-            <Link
-              variant="ghost"
-              className="p-0 h-auto"
-              href="https://boldlabs.ao">Bold Labs</Link
-            >
-          </li>
-          <li>
-            <Link variant="ghost" className="p-0 h-auto" href="#"
-              >Eventos Bolds</Link
-            >
-          </li>
-          <li>
-            <Link variant="ghost" className="p-0 h-auto" href="#">Labuta</Link>
-          </li>
+          {
+            areas.map(({ text, href }) => (
+              <li>
+                <Link variant="ghost" className="p-0 h-auto" href={href}>
+                  {text}
+                </Link>
+              </li>
+            ))
+          }
         </ul>
       </div>
       <div class="space-y-4">
-        <p class="font-bold text-lg">Contato</p>
+        <p class="font-bold text-lg">{t("footer.contact")}</p>
         <div>
           <p>
             Email: <Link
@@ -88,12 +98,12 @@ const year = new Date().getFullYear();
     </div>
     <div class="md:flex justify-between items-center">
       <p>
-        © {year} BOLD MEDIA. Todos os direitos reservados.
+        © {year} BOLD MEDIA. {t("footer.copyright")}
       </p>
       <Link
         variant="ghost"
         className="p-0 h-auto text-center w-full md:w-auto text-xs"
-        href="#">Voltar ao topo <ArrowUp /></Link
+        href="#">{t("footer.back-to-top")} <ArrowUp /></Link
       >
     </div>
   </div>

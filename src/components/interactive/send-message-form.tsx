@@ -1,13 +1,21 @@
+import { useTranslations } from "@/lib/utils";
+import type { ui } from "i18n/ui";
 import { Send } from "lucide-react";
+import { useCallback } from "react";
 import { Button } from "../ui/button";
 
-export default function SendMessageForm() {
+type Props = {
+  lang: keyof typeof ui;
+};
+
+export default function SendMessageForm({ lang }: Props) {
+  const t = useCallback(useTranslations(lang), [lang]);
   return (
     <form className="bg-white rounded-md shadow-md p-8 space-y-6 row-span-2">
-      <h3 className="font-bold text-2xl">Envie-nos uma mensagem</h3>
+      <h3 className="font-bold text-2xl">{t("contact.form-title")}</h3>
       <div className="flex flex-col gap-2">
         <label className="font-medium text-sm" htmlFor="name">
-          Nome
+          {t("contact.form-name")}
         </label>
         <input
           className="bg-input border-input-border border focus:outline-primary/60 rounded-md py-2.5 px-3"
@@ -15,12 +23,12 @@ export default function SendMessageForm() {
           required
           id="name"
           name="name"
-          placeholder="Seu nome"
+          placeholder={t("contact.form-name-placeholder")}
         />
       </div>
       <div className="flex flex-col gap-2">
         <label className="font-medium text-sm" htmlFor="email">
-          Email
+          {t("contact.form-email")}
         </label>
         <input
           className="bg-input border-input-border border focus:outline-primary/60 rounded-md py-2.5 px-3"
@@ -28,23 +36,23 @@ export default function SendMessageForm() {
           required
           id="email"
           name="email"
-          placeholder="email@exemplo.com"
+          placeholder={t("contact.form-email-placeholder")}
         />
       </div>
       <div className="flex flex-col gap-2">
         <label className="font-medium text-sm" htmlFor="message">
-          Mensagem
+          {t("contact.form-message")}
         </label>
         <textarea
           className="bg-input border-input-border border rounded-md focus:outline-primary/60 py-2.5 px-3 resize-y h-36 max-h-48 min-h-24"
           required
           id="message"
           name="message"
-          placeholder="Como podemos ajudar?"
+          placeholder={t("contact.form-message-placeholder")}
         />
       </div>
       <Button className="w-full">
-        Enviar mensagem <Send />
+        {t("contact.form-submit")} <Send />
       </Button>
     </form>
   );

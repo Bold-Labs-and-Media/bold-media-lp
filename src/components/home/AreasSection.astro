@@ -5,7 +5,53 @@ import {
   BoldLabsLogo,
   LabutaLogo,
 } from "@/lib/assets";
+import { getLangFromUrl, useTranslations } from "@/lib/utils";
 import AreaItem from "./AreaItem.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const areas = [
+  {
+    title: t("areas.value1-title"),
+    description: t("areas.value1-subtitle"),
+    color: "#d62e33",
+    logo: AngolaTodayLogo,
+  },
+  {
+    title: t("areas.value2-title"),
+    description: t("areas.value2-subtitle"),
+    color: "#FA7921",
+    logo: BoldLabsLogo,
+  },
+  {
+    title: t("areas.value3-title"),
+    description: t("areas.value3-subtitle"),
+    color: "#1D3557",
+    logo: BoldEventsLogo,
+  },
+  {
+    title: t("areas.value4-title"),
+    description: t("areas.value4-subtitle"),
+    color: "#2A9D8F",
+    logo: LabutaLogo,
+  },
+];
+
+const labutaContent = [
+  {
+    title: t("areas.labuta-feature1-title"),
+    description: t("areas.labuta-feature1-subtitle"),
+  },
+  {
+    title: t("areas.labuta-feature2-title"),
+    description: t("areas.labuta-feature2-subtitle"),
+  },
+  {
+    title: t("areas.labuta-feature3-title"),
+    description: t("areas.labuta-feature3-subtitle"),
+  },
+];
 ---
 
 <div id="areas" class="py-36 bg-grey-100/5">
@@ -13,77 +59,39 @@ import AreaItem from "./AreaItem.astro";
     <div class="mb-16 space-y-14">
       <h2 class="font-bold text-4xl md:text-[36px] text-center">
         <span class="border-b-4 border-primary max-w-[768px] mx-auto"
-          >Áreas de</span
+          >{t("areas.title1")}</span
         >
-        Atuação
+        {t("areas.title2")}
       </h2>
       <p class="text-center max-w-[768px] mx-auto">
-        Desenvolvemos diversas iniciativas para amplificar as narrativas
-        africanas e transformar o mercado de comunicação em Angola e em todo o
-        continente.
+        {t("areas.subtitle")}
       </p>
     </div>
     <ul class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-      <AreaItem
-        title="Angola Today"
-        description="Portal digital de notícias com foco em economia, desporto, empreendedorismo, inovação e cultura africana."
-        color="#d62e33"
-      >
-        <AngolaTodayLogo slot="logo" style="color: #d62e33" />
-      </AreaItem>
-      <AreaItem
-        title="Bold Labs"
-        description="Agência de inovação, consultoria,comunicação e assessoria para marcas que desejam se posicionar no mercado africano."
-        color="#FA7921"
-      >
-        <BoldLabsLogo slot="logo" style="color: #FA7921" />
-      </AreaItem>
-      <AreaItem
-        title="Eventos Bold"
-        description="Organização de eventos disruptivos que conectam empreendedores, inovadores e líderes africanos ao mundo."
-        color="#1D3557"
-      >
-        <BoldEventsLogo slot="logo" style="color: #1D3557" />
-      </AreaItem>
-      <AreaItem
-        title="Labuta"
-        description="Marketplace angolano que conecta clientes a profissionais qualificados para a realização de trabalhos freelancers sob demanda."
-        color="#2A9D8F"
-      >
-        <LabutaLogo slot="logo" style="color: #2A9D8F" />
-      </AreaItem>
+      {
+        areas.map(({ logo: Logo, ...area }) => (
+          <AreaItem {...area}>
+            <Logo slot="logo" style={`color: ${area.color}`} />
+          </AreaItem>
+        ))
+      }
     </ul>
     <div
       class="mt-16 rounded-xl border-t-4 border-cyan-300 shadow-md py-9 px-8 bg-white space-y-4 text-grey-100"
     >
-      <p class="font-bold text-2xl text-cyan-300">Destaque: Labuta</p>
+      <p class="font-bold text-2xl text-cyan-300">{t("areas.labuta-title")}</p>
       <p>
-        Labuta é um marketplace angolano que conecta clientes a profissionais
-        qualificados para a realização de trabalhos freelancers sob demanda. Por
-        meio da plataforma, freelancers e empresas podem se cadastrar, oferecer
-        seus serviços e gerar receita ao atender às necessidades dos clientes.
+        {t("areas.labuta-subtitle")}
       </p>
       <ul class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <li
-          class="md:last:col-span-2 lg:last:col-span-1 bg-cyan-300/5 p-4 space-y-2"
-        >
-          <p class="font-bold text-sm">Para Freelancers</p>
-          <p>Cadastre suas habilidades e encontre oportunidades de trabalho.</p>
-        </li>
-        <li
-          class="md:last:col-span-2 lg:last:col-span-1 bg-cyan-300/5 p-4 space-y-2"
-        >
-          <p class="font-bold text-sm">Para Empresas</p>
-          <p>
-            Encontre talentos qualificados para os seus projetos sob demanda.
-          </p>
-        </li>
-        <li
-          class="md:last:col-span-2 lg:last:col-span-1 bg-cyan-300/5 p-4 space-y-2"
-        >
-          <p class="font-bold text-sm">Para o Mercado</p>
-          <p>Fortalecimento da economia local e geração de oportunidades.</p>
-        </li>
+        {
+          labutaContent.map(({ description, title }) => (
+            <li class="md:last:col-span-2 lg:last:col-span-1 bg-cyan-300/5 p-4 space-y-2">
+              <p class="font-bold text-sm">{title}</p>
+              <p>{description}</p>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </section>

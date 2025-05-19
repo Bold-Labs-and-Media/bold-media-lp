@@ -1,33 +1,49 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/lib/utils";
 import { Mail } from "lucide-react";
 import SendMessageForm from "../interactive/send-message-form";
 import { Link } from "../ui/link";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const whyUs = [
+  {
+    title: t("contact.why-us-point1"),
+  },
+  {
+    title: t("contact.why-us-point2"),
+  },
+  {
+    title: t("contact.why-us-point3"),
+  },
+];
 ---
 
 <div id="contact" class="bg-grey-100/5 py-16">
   <section class="wrapper">
     <div class="space-y-14 text-grey-100 mb-16 md:mb-14">
       <h2 class="font-bold text-4xl md:text-[36px] text-center">
-        <span class="border-b-4 border-primary">Junte-se a</span>
-        Nós
+        <span class="border-b-4 border-primary">{t("contact.title1")}</span>
+        {t("contact.title2")}
       </h2>
       <p class="text-center max-w-[768px] mx-auto">
-        Vamos juntos construir o futuro das narrativas africanas. Entre em
-        contato connosco para saber mais sobre como podemos colaborar.
+        {t("contact.subtitle")}
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <SendMessageForm client:load />
+      <SendMessageForm lang={lang} client:load />
       <div class="bg-white rounded-md shadow-md p-8 space-y-6">
         <div class="flex items-center gap-4">
           <div class="rounded-full p-3 w-fit bg-primary/10">
             <Mail size={32} className="text-primary" />
           </div>
-          <h3 class="text-grey-100 text-2xl font-bold">Contacto Direto</h3>
+          <h3 class="text-grey-100 text-2xl font-bold">
+            {t("contact.email-title")}
+          </h3>
         </div>
         <p>
-          Tem alguma pergunta ou quer saber mais sobre nossas iniciativas? Entre
-          em contato connosco diretamente.
+          {t("contact.email-subtitle")}
         </p>
         <div class="bg-grey-100/5 p-4 rounded-md text-sm">
           <p class="font-bold">Email</p>
@@ -39,38 +55,18 @@ import { Link } from "../ui/link";
         </div>
       </div>
       <div class="rounded-md why-us-bg text-white shadow-md p-8 space-y-4">
-        <p class="font-bold text-2xl">Por que se juntar a nós?</p>
+        <p class="font-bold text-2xl">{t("contact.why-us-title")}</p>
         <ul class="space-y-4 text-sm">
-          <li class="flex gap-3">
-            <div
-              class="size-5 bg-white/20 rounded-full flex justify-center items-center"
-            >
-              <div class="size-2 bg-white rounded-full"></div>
-            </div>
-            <p class="flex-1">
-              Faça parte da transformação das narrativas africanas
-            </p>
-          </li>
-          <li class="flex gap-3">
-            <div
-              class="size-5 bg-white/20 rounded-full flex justify-center items-center"
-            >
-              <div class="size-2 bg-white rounded-full"></div>
-            </div>
-            <p class="flex-1">
-              Conecte-se com uma rede de inovadores e líderes
-            </p>
-          </li>
-          <li class="flex gap-3">
-            <div
-              class="size-5 bg-white/20 rounded-full flex justify-center items-center"
-            >
-              <div class="size-2 bg-white rounded-full"></div>
-            </div>
-            <p class="flex-1">
-              Contribua para o crescimento e desenvolvimento de África
-            </p>
-          </li>
+          {
+            whyUs.map(({ title }) => (
+              <li class="flex gap-3">
+                <div class="size-5 bg-white/20 rounded-full flex justify-center items-center">
+                  <div class="size-2 bg-white rounded-full" />
+                </div>
+                <p class="flex-1">{title}</p>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>

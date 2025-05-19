@@ -1,6 +1,29 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/lib/utils";
 import { Heart } from "lucide-react";
 import ValueItem from "./ValueItem.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const values = [
+  {
+    title: t("values.value1-title"),
+    description: t("values.value1-subtitle"),
+  },
+  {
+    title: t("values.value2-title"),
+    description: t("values.value2-subtitle"),
+  },
+  {
+    title: t("values.value3-title"),
+    description: t("values.value3-subtitle"),
+  },
+  {
+    title: t("values.value4-title"),
+    description: t("values.value4-subtitle"),
+  },
+];
 ---
 
 <section class="wrapper pt-4 pb-16 md:pb-16">
@@ -11,35 +34,17 @@ import ValueItem from "./ValueItem.astro";
     <h3 class="font-bold text-2xl text-grey-100">Nossos Valores</h3>
   </div>
   <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-    <ValueItem
-      description="Buscamos constantemente novas formas de contar histórias e transmitir informações."
-      title="Inovação e Criatividade"
-    />
-    <ValueItem
-      description="Comprometemo-nos com a verdade e a ética em todas as nossas ações."
-      title="Transparência e Integridade"
-    />
-    <ValueItem
-      description="Trabalhamos para construir um legado positivo para as próximas gerações africanas."
-      title="Compromisso com o Futuro de África"
-    />
-    <ValueItem
-      description="Promovemos práticas sustentáveis e representatividade em tudo o que fazemos."
-      title="Sustentabilidade e Inclusão"
-    />
+    {values.map((value) => <ValueItem {...value} />)}
   </ul>
   <div
     class="rounded-4xl bg-azure-200/5 p-8 space-y-4 mt-16 md:mt-14 text-grey-100"
   >
-    <h4 class="font-bold text-2xl">Oportunidade no Mercado</h4>
+    <h4 class="font-bold text-2xl">{t("values.market-title")}</h4>
     <p>
-      África está a emergir como um dos continentes com maior potencial de
-      crescimento economico e social. Há uma demanda crescente por narrativas
-      locais, autênticas e positivas.
+      {t("values.market-subtitle1")}
     </p>
     <p>
-      Angola, em especial, se destaca como um mercado estratégico para a
-      expansão da comunicação em África.
+      {t("values.market-subtitle2")}
     </p>
   </div>
 </section>
