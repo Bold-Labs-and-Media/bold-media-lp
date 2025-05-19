@@ -1,18 +1,13 @@
 ---
 import { LogoSVG } from "@/lib/assets";
-import { Menu } from "lucide-react";
+import NavMenu from "../interactive/nav-menu";
 import { Link } from "../ui/link";
 ---
 
 <header class="py-4 wrapper">
   <div class="flex items-center justify-between">
     <LogoSVG class="text-primary" />
-
-    <button class="md:hidden">
-      <Menu />
-    </button>
-
-    <nav class="hidden md:flex gap-8 items-center">
+    <NavMenu client:load>
       <Link variant="ghost" className="p-0 h-auto" href="#about">Sobre</Link>
       <Link variant="ghost" className="p-0 h-auto" href="#areas"
         >Áreas de Atuação</Link
@@ -23,7 +18,7 @@ import { Link } from "../ui/link";
       <Link variant="ghost" className="p-0 h-auto" href="#contact"
         >Contacto</Link
       >
-      <Link href="#contact">Junte-se a Nós</Link>
-    </nav>
+      <Link href="#contact" className="w-fit mx-auto">Junte-se a Nós</Link>
+    </NavMenu>
   </div>
 </header>
