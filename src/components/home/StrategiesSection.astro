@@ -1,4 +1,5 @@
 ---
+import { Speech } from "lucide-react";
 import Strategies from "../interactive/strategies";
 ---
 
@@ -16,4 +17,41 @@ import Strategies from "../interactive/strategies";
     </p>
   </div>
   <Strategies client:load />
+  <div class="border shadow-md border-azure-200 rounded-md p-8 space-y-4 mt-16">
+    <div class="flex items-center gap-4">
+      <div class="rounded-full p-3 w-fit bg-azure-200/10">
+        <Speech size={32} className="text-azure-200" />
+      </div>
+      <h3 class="text-grey-100 text-2xl font-bold">
+        Diferencial Competitivo: Bold Labs
+      </h3>
+    </div>
+    <p>
+      Nosso laboratório de ideias atua como um hub para testar e lançar novos
+      formatos de media, estabelecendo parcerias com universidades e startups
+      tecnológicas para fomentar pesquisa e desenvolvimento.
+    </p>
+    <ul class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <li
+        class="md:last:col-span-2 lg:last:col-span-1 bg-azure-200/5 p-4 space-y-2"
+      >
+        <p class="font-bold text-sm">Pesquisa</p>
+        <p>Investigamos tendências e comportamentos do mercado africano.</p>
+      </li>
+      <li
+        class="md:last:col-span-2 lg:last:col-span-1 bg-azure-200/5 p-4 space-y-2"
+      >
+        <p class="font-bold text-sm">Inovação</p>
+        <p>Desenvolvemos soluções tecnológicas para desafios de comunicação.</p>
+      </li>
+      <li
+        class="md:last:col-span-2 lg:last:col-span-1 bg-azure-200/5 p-4 space-y-2"
+      >
+        <p class="font-bold text-sm">Colaboração</p>
+        <p>
+          Criamos parcerias estratégicas com talentos e instituições locais.
+        </p>
+      </li>
+    </ul>
+  </div>
 </section>
