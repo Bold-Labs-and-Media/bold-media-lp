@@ -1,5 +1,5 @@
+import type { ui } from "@/i18n/ui";
 import { useTranslations } from "@/lib/utils";
-import type { ui } from "i18n/ui";
 import { Send } from "lucide-react";
 import { useCallback } from "react";
 import { Button } from "../ui/button";

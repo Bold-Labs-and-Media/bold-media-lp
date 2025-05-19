@@ -1,9 +1,9 @@
 ---
 import Footer from "@/components/common/Footer.astro";
 import Header from "@/components/common/Header.astro";
+import { languages } from "@/i18n/ui";
 import { getLangFromUrl, useTranslations } from "@/lib/utils";
 import "@/styles/global.css";
-import { languages } from "i18n/ui";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

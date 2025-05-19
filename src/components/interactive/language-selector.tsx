@@ -1,4 +1,4 @@
-import { defaultLang, languages } from "i18n/ui";
+import { defaultLang, languages } from "@/i18n/ui";
 import { ChevronDown, Languages } from "lucide-react";
 import { Button } from "../ui/button";
 import {
