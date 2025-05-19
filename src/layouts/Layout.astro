@@ -1,7 +1,12 @@
 ---
 import Footer from "@/components/common/Footer.astro";
 import Header from "@/components/common/Header.astro";
+import { getLangFromUrl, useTranslations } from "@/lib/utils";
 import "@/styles/global.css";
+import { languages } from "i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <!doctype html>
@@ -13,7 +18,28 @@ import "@/styles/global.css";
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <title>Bold Media</title>
+    <meta name="description" content={t("seo.description")} />
+    <meta name="keywords" content={t("seo.keywords")} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Bold Media" />
+    <title>{t("seo.title")}</title>
+    {
+      Object.keys(languages).map((code) => (
+        <link rel="alternate" hreflang={code} href={`/${code}`} />
+      ))
+    }
+    <!-- Open Graph -->
+    <meta property="og:title" content={t("seo.title")} />
+    <meta property="og:description" content={t("seo.description")} />
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:url" content={Astro.url} /> -->
+    <meta property="og:locale" content={lang} />
+    {
+      Object.keys(languages).map((code) => (
+        <meta property="og:locale:alternate" content={code} />
+      ))
+    }
+    <meta property="og:image" content={`/favicon-32x32.png`} />
   </head>
   <body>
     <Header />
