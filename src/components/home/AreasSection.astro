@@ -1,0 +1,90 @@
+---
+import {
+  AngolaTodayLogo,
+  BoldEventsLogo,
+  BoldLabsLogo,
+  LabutaLogo,
+} from "@/lib/assets";
+import AreaItem from "./AreaItem.astro";
+---
+
+<div class="py-36 bg-grey-100/5">
+  <section class="wrapper">
+    <div class="mb-16 space-y-14">
+      <h2 class="font-bold text-4xl md:text-[36px] text-center">
+        <span class="border-b-4 border-primary max-w-[768px] mx-auto"
+          >Áreas de</span
+        >
+        Atuação
+      </h2>
+      <p class="text-center max-w-[768px] mx-auto">
+        Desenvolvemos diversas iniciativas para amplificar as narrativas
+        africanas e transformar o mercado de comunicação em Angola e em todo o
+        continente.
+      </p>
+    </div>
+    <ul class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <AreaItem
+        title="Angola Today"
+        description="Portal digital de notícias com foco em economia, desporto, empreendedorismo, inovação e cultura africana."
+        color="#d62e33"
+      >
+        <AngolaTodayLogo slot="logo" style="color: #d62e33" />
+      </AreaItem>
+      <AreaItem
+        title="Bold Labs"
+        description="Agência de inovação, consultoria,comunicação e assessoria para marcas que desejam se posicionar no mercado africano."
+        color="#FA7921"
+      >
+        <BoldLabsLogo slot="logo" style="color: #FA7921" />
+      </AreaItem>
+      <AreaItem
+        title="Eventos Bold"
+        description="Organização de eventos disruptivos que conectam empreendedores, inovadores e líderes africanos ao mundo."
+        color="#1D3557"
+      >
+        <BoldEventsLogo slot="logo" style="color: #1D3557" />
+      </AreaItem>
+      <AreaItem
+        title="Labuta"
+        description="Marketplace angolano que conecta clientes a profissionais qualificados para a realização de trabalhos freelancers sob demanda."
+        color="#2A9D8F"
+      >
+        <LabutaLogo slot="logo" style="color: #2A9D8F" />
+      </AreaItem>
+    </ul>
+    <div
+      class="mt-16 rounded-xl border-t-4 border-cyan-300 shadow-md py-9 px-8 bg-white space-y-4 text-grey-100"
+    >
+      <p class="font-bold text-2xl text-cyan-300">Destaque: Labuta</p>
+      <p>
+        Labuta é um marketplace angolano que conecta clientes a profissionais
+        qualificados para a realização de trabalhos freelancers sob demanda. Por
+        meio da plataforma, freelancers e empresas podem se cadastrar, oferecer
+        seus serviços e gerar receita ao atender às necessidades dos clientes.
+      </p>
+      <ul class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <li
+          class="md:last:col-span-2 lg:last:col-span-1 bg-cyan-300/5 p-4 space-y-2"
+        >
+          <p class="font-bold text-sm">Para Freelancers</p>
+          <p>Cadastre suas habilidades e encontre oportunidades de trabalho.</p>
+        </li>
+        <li
+          class="md:last:col-span-2 lg:last:col-span-1 bg-cyan-300/5 p-4 space-y-2"
+        >
+          <p class="font-bold text-sm">Para Empresas</p>
+          <p>
+            Encontre talentos qualificados para os seus projetos sob demanda.
+          </p>
+        </li>
+        <li
+          class="md:last:col-span-2 lg:last:col-span-1 bg-cyan-300/5 p-4 space-y-2"
+        >
+          <p class="font-bold text-sm">Para o Mercado</p>
+          <p>Fortalecimento da economia local e geração de oportunidades.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
