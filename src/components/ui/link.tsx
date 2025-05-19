@@ -3,13 +3,16 @@ import { Button } from "./button";
 
 export interface LinkProps extends ComponentProps<typeof Button> {
   href: string;
+  target?: ComponentProps<"a">["target"];
   children: ReactNode;
 }
 
-function Link({ href, children, ...props }: LinkProps) {
+function Link({ href, children, target, ...props }: LinkProps) {
   return (
     <Button {...props} asChild>
-      <a href={href}>{children}</a>
+      <a target={target} href={href}>
+        {children}
+      </a>
     </Button>
   );
 }
