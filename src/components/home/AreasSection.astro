@@ -37,26 +37,11 @@ const areas = [
     logo: LabutaLogo,
   },
 ];
-
-const labutaContent = [
-  {
-    title: t("areas.labuta-feature1-title"),
-    description: t("areas.labuta-feature1-subtitle"),
-  },
-  {
-    title: t("areas.labuta-feature2-title"),
-    description: t("areas.labuta-feature2-subtitle"),
-  },
-  {
-    title: t("areas.labuta-feature3-title"),
-    description: t("areas.labuta-feature3-subtitle"),
-  },
-];
 ---
 
-<div id="areas" class="py-36 bg-grey-100/5">
+<div id="areas" class="py-24 bg-grey-100/5">
   <section class="wrapper">
-    <div class="mb-16 space-y-14">
+    <div class="mb-16 space-y-8">
       <h2 class="font-bold text-4xl md:text-[36px] text-center">
         <span class="border-b-4 border-primary max-w-[768px] mx-auto"
           >{t("areas.title1")}</span
@@ -76,23 +61,5 @@ const labutaContent = [
         ))
       }
     </ul>
-    <div
-      class="mt-16 rounded-xl border-t-4 border-cyan-300 shadow-md py-9 px-8 bg-white space-y-4 text-grey-100"
-    >
-      <p class="font-bold text-2xl text-cyan-300">{t("areas.labuta-title")}</p>
-      <p>
-        {t("areas.labuta-subtitle")}
-      </p>
-      <ul class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {
-          labutaContent.map(({ description, title }) => (
-            <li class="md:last:col-span-2 lg:last:col-span-1 bg-cyan-300/5 p-4 space-y-2">
-              <p class="font-bold text-sm">{title}</p>
-              <p>{description}</p>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
   </section>
 </div>
