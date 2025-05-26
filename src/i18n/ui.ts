@@ -11,8 +11,10 @@ export const ui: UI = {
   pt: {
     // SEO
     "seo.title": "Bold Media",
-    "seo.description": "",
-    "seo.keywords": "",
+    "seo.description":
+      "Grupo de media que transforma narrativas africanas com tecnologias, dados, criatividade, notícias premium, branding e eventos transformadores.",
+    "seo.keywords":
+      "Bold Media, media africana, narrativas africanas, tecnologia, dados, criatividade, notícias premium, branding, eventos transformadores, comunicação digital, storytelling africano, inovação em media, cultura africana, agência de media, eventos africanos, marketing africano, transformação digital",
     // Header
     "header.nav1": "Sobre",
     "header.nav2": "Áreas de Atuação",
@@ -150,8 +152,10 @@ export const ui: UI = {
   en: {
     // SEO
     "seo.title": "Bold Media",
-    "seo.description": "",
-    "seo.keywords": "",
+    "seo.description":
+      "Media group that transforms African narratives through technology, data, creativity, premium news, branding, and transformative events.",
+    "seo.keywords":
+      "Bold Media, African media, African narratives, technology, data, creativity, premium news, branding, transformative events, digital communication, African storytelling, media innovation, African culture, media agency, African events, African marketing, digital transformation",
     // About
     "header.nav1": "About",
     "header.nav2": "Areas of Expertise",
