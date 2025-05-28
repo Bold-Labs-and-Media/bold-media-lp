@@ -6,6 +6,45 @@ import Strategies from "../interactive/strategies";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const strategies = [
+  {
+    value: "production",
+    bulletList: [
+      t("strategies.production-point1"),
+      t("strategies.production-point2"),
+      t("strategies.production-point3"),
+    ],
+    title: t("strategies.production-title"),
+  },
+  {
+    value: "data",
+    bulletList: [
+      t("strategies.data-point1"),
+      t("strategies.data-point2"),
+      t("strategies.data-point3"),
+    ],
+    title: t("strategies.data-title"),
+  },
+  {
+    value: "empowerment",
+    bulletList: [
+      t("strategies.empowerment-point1"),
+      t("strategies.empowerment-point2"),
+      t("strategies.empowerment-point3"),
+    ],
+    title: t("strategies.empowerment-title"),
+  },
+  {
+    value: "advocacy",
+    bulletList: [
+      t("strategies.advocacy-point1"),
+      t("strategies.advocacy-point2"),
+      t("strategies.advocacy-point3"),
+    ],
+    title: t("strategies.advocacy-title"),
+  },
+];
+
 const boldLabsPoints = [
   {
     title: t("strategies.bold-labs-point1-title"),
@@ -34,7 +73,7 @@ const boldLabsPoints = [
       {t("strategies.subtitle")}
     </p>
   </div>
-  <Strategies lang={lang} client:load />
+  <Strategies lang={lang} content={strategies} client:load />
   <div class="border shadow-md border-azure-200 rounded-md p-8 space-y-4 mt-16">
     <div class="flex items-center gap-4">
       <div class="rounded-full p-3 w-fit bg-azure-200/10">

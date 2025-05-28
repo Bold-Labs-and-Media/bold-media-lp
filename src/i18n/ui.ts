@@ -91,18 +91,38 @@ export const ui: UI = {
     "strategies.title2": "de Posicionamento",
     "strategies.subtitle":
       "Nossas estratégias inovadoras nos posicionam na vanguarda da comunicação em África, combinando tecnologia, conteúdo autêntico e compromisso social.",
-    "strategies.tab1": "Adoção",
-    "strategies.tab2": "Produção",
-    "strategies.tab3": "Dados",
-    "strategies.tab4": "Empoderamento",
-    "strategies.tab5": "Advocacia",
-    "strategies.value1-title": "Adoção de Tecnologia de Ponta",
-    "strategies.value1-point1":
-      "Investimento em Inteligência Artificial (IA) para personalização de conteúdo e análise de dados do público.",
-    "strategies.value1-point2":
-      "Uso de Blockchain para autenticação e proteção de informações.",
-    "strategies.value1-point3":
-      "Desenvolvimento de plataformas interativas que combinam vídeo, áudio e realidade aumentada.",
+    "strategies.tab1": "Produção",
+    "strategies.tab2": "Dados",
+    "strategies.tab3": "Empoderamento",
+    "strategies.tab4": "Advocacia",
+    "strategies.production-title": "Produção de Conteúdo Original",
+    "strategies.production-point1":
+      "Criação de conteúdo, séries documentais e podcasts exclusivos que desafiam as narrativas tradicionais sobre África.",
+    "strategies.production-point2":
+      "Estímulo à produção de histórias autênticas por storytellers africanos.",
+    "strategies.production-point3":
+      "Exploração de novos formatos de media, incluindo transmissões ao vivo imersivas e conteúdos interativos.",
+    "strategies.data-title": "Dados como Diferencial Competitivo",
+    "strategies.data-point1":
+      "Análise de dados para adaptar conteúdos às preferências reais do público.",
+    "strategies.data-point2":
+      "Desenvolvimento de um índice para avaliar o impacto do setor de media em África.",
+    "strategies.data-point3":
+      "Uso de big data para identificar oportunidades económicas e culturais em todo o continente.",
+    "strategies.empowerment-title": "Empoderamento de Talentos Locais",
+    "strategies.empowerment-point1":
+      "Capacitação de jovens africanos através de programas de mentoria e formação em media e tecnologia",
+    "strategies.empowerment-point2":
+      "Estabelecimento de parcerias com escolas e centros culturais para formar talentos locais.",
+    "strategies.empowerment-point3":
+      "Criação de um pipeline contínuo de profissionais preparados para liderar o futuro da comunicação em África.",
+    "strategies.advocacy-title": "Advocacia e Inclusão",
+    "strategies.advocacy-point1":
+      "Amplificação de vozes sub-representadas, incluindo mulheres e comunidades rurais.",
+    "strategies.advocacy-point2":
+      "Produção de campanhas de impacto social focadas em temas como saúde, educação e empreendedorismo.",
+    "strategies.advocacy-point3":
+      "Compromisso com a transformação social através de narrativas responsáveis e representativas",
     "strategies.bold-labs-title": "Diferencial Competitivo: Bold Labs",
     "strategies.bold-labs-subtitle":
       "Nosso laboratório de ideias atua como um hub para testar e lançar novos formatos de media, estabelecendo parcerias com universidades e startups tecnológicas para fomentar pesquisa e desenvolvimento.",
@@ -235,18 +255,42 @@ export const ui: UI = {
     "strategies.title2": "Strategies",
     "strategies.subtitle":
       "Our innovative strategies place us at the forefront of communication in Africa, combining technology, authentic content, and social commitment.",
-    "strategies.tab1": "Adoption",
-    "strategies.tab2": "Production",
-    "strategies.tab3": "Data",
-    "strategies.tab4": "Empowerment",
-    "strategies.tab5": "Advocacy",
-    "strategies.value1-title": "Adoption of Cutting-Edge Technology",
-    "strategies.value1-point1":
-      "Investment in Artificial Intelligence (AI) for content personalization and audience data analysis.",
-    "strategies.value1-point2":
-      "Use of Blockchain for authentication and information protection.",
-    "strategies.value1-point3":
-      "Development of interactive platforms combining video, audio, and augmented reality.",
+    "strategies.tab1": "Production",
+    "strategies.tab2": "Data",
+    "strategies.tab3": "Empowerment",
+    "strategies.tab4": "Advocacy",
+
+    "strategies.production-title": "Original Content Production",
+    "strategies.production-point1":
+      "Creation of content, documentary series, and exclusive podcasts that challenge traditional narratives about Africa.",
+    "strategies.production-point2":
+      "Encouraging the production of authentic stories by African storytellers.",
+    "strategies.production-point3":
+      "Exploring new media formats, including immersive live streams and interactive content.",
+
+    "strategies.data-title": "Data as a Competitive Advantage",
+    "strategies.data-point1":
+      "Data analysis to tailor content to the audience’s actual preferences.",
+    "strategies.data-point2":
+      "Development of an index to evaluate the impact of the media sector in Africa.",
+    "strategies.data-point3":
+      "Use of big data to identify economic and cultural opportunities across the continent.",
+
+    "strategies.empowerment-title": "Empowerment of Local Talent",
+    "strategies.empowerment-point1":
+      "Training young Africans through mentorship programs and education in media and technology.",
+    "strategies.empowerment-point2":
+      "Establishing partnerships with schools and cultural centers to develop local talent.",
+    "strategies.empowerment-point3":
+      "Creating a continuous pipeline of professionals prepared to lead the future of communication in Africa.",
+
+    "strategies.advocacy-title": "Advocacy and Inclusion",
+    "strategies.advocacy-point1":
+      "Amplifying underrepresented voices, including women and rural communities.",
+    "strategies.advocacy-point2":
+      "Producing social impact campaigns focused on topics such as health, education, and entrepreneurship.",
+    "strategies.advocacy-point3":
+      "Commitment to social transformation through responsible and representative storytelling.",
     "strategies.bold-labs-title": "Competitive Edge: Bold Labs",
     "strategies.bold-labs-subtitle":
       "Our ideas lab acts as a hub for testing and launching new media formats, partnering with universities and tech startups to foster research and development.",
