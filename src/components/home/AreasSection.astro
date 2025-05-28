@@ -1,8 +1,8 @@
 ---
 import {
-  AngolaTodayLogo,
+  angolaTodayLogoImage,
   BoldEventsLogo,
-  BoldLabsLogo,
+  boldLabsLogoImage,
   LabutaLogo,
 } from "@/lib/assets";
 import { getLangFromUrl, useTranslations } from "@/lib/utils";
@@ -15,26 +15,30 @@ const areas = [
   {
     title: t("areas.value1-title"),
     description: t("areas.value1-subtitle"),
-    color: "#d62e33",
-    logo: AngolaTodayLogo,
+    color: "#e6761e",
+    logo: angolaTodayLogoImage,
+    link: "",
   },
   {
     title: t("areas.value2-title"),
     description: t("areas.value2-subtitle"),
-    color: "#FA7921",
-    logo: BoldLabsLogo,
+    color: "#57f09f",
+    logo: boldLabsLogoImage,
+    link: "https://boldlabs.ao/",
   },
   {
     title: t("areas.value3-title"),
     description: t("areas.value3-subtitle"),
     color: "#1D3557",
     logo: BoldEventsLogo,
+    link: "https://boldlabs.ao/",
   },
   {
     title: t("areas.value4-title"),
     description: t("areas.value4-subtitle"),
     color: "#2A9D8F",
     logo: LabutaLogo,
+    link: "",
   },
 ];
 ---
@@ -53,13 +57,7 @@ const areas = [
       </p>
     </div>
     <ul class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-      {
-        areas.map(({ logo: Logo, ...area }) => (
-          <AreaItem {...area}>
-            <Logo slot="logo" style={`color: ${area.color}`} />
-          </AreaItem>
-        ))
-      }
+      {areas.map((area) => <AreaItem {...area} />)}
     </ul>
   </section>
 </div>

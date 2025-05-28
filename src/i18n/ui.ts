@@ -57,6 +57,7 @@ export const ui: UI = {
     "values.market-subtitle2":
       "Angola, em especial, se destaca como um mercado estratégico para a expansão da comunicação em África.",
     // Areas
+    "areas.see-more": "Ver Mais",
     "areas.title1": "Áreas de",
     "areas.title2": "Atuação",
     "areas.subtitle":
@@ -198,6 +199,7 @@ export const ui: UI = {
     "values.market-subtitle2":
       "Angola, in particular, stands out as a strategic market for the expansion of communication in Africa.",
     // Areas
+    "areas.see-more": "See More",
     "areas.title1": "Areas of",
     "areas.title2": "Expertise",
     "areas.subtitle":
