@@ -23,6 +23,18 @@ const t = useTranslations(lang);
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Bold Media" />
     <title>{t("seo.title")}</title>
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TEKJKQK6ET"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-TEKJKQK6ET");
+    </script>
     {
       Object.keys(languages).map((code) => (
         <link rel="alternate" hreflang={code} href={`/${code}`} />

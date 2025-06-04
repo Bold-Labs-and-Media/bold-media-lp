@@ -1,9 +1,9 @@
 ---
 import {
   angolaTodayLogoImage,
-  BoldEventsLogo,
+  boldEventsLogoImage,
   boldLabsLogoImage,
-  LabutaLogo,
+  labutaLogoImage,
 } from "@/lib/assets";
 import { getLangFromUrl, useTranslations } from "@/lib/utils";
 import AreaItem from "./AreaItem.astro";
@@ -17,7 +17,7 @@ const areas = [
     description: t("areas.value1-subtitle"),
     color: "#e6761e",
     logo: angolaTodayLogoImage,
-    link: "",
+    link: "https://boldlabs.ao/",
   },
   {
     title: t("areas.value2-title"),
@@ -29,16 +29,16 @@ const areas = [
   {
     title: t("areas.value3-title"),
     description: t("areas.value3-subtitle"),
-    color: "#1D3557",
-    logo: BoldEventsLogo,
+    color: "#1a1a1c",
+    logo: boldEventsLogoImage,
     link: "https://boldlabs.ao/",
   },
   {
     title: t("areas.value4-title"),
     description: t("areas.value4-subtitle"),
-    color: "#2A9D8F",
-    logo: LabutaLogo,
-    link: "",
+    color: "#04342c",
+    logo: labutaLogoImage,
+    link: "https://boldlabs.ao",
   },
 ];
 ---
