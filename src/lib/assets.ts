@@ -9,4 +9,6 @@ export { default as LogoSVG } from "@/assets/svg/logo.svg";
 
 // Images
 export { default as angolaTodayLogoImage } from "@/assets/images/angola-today-logo.png";
+export { default as boldEventsLogoImage } from "@/assets/images/bold-events-logo.png";
 export { default as boldLabsLogoImage } from "@/assets/images/bold-labs-logo.png";
+export { default as labutaLogoImage } from "@/assets/images/labuta-logo.png";
