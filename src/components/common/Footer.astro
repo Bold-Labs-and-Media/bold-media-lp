@@ -11,7 +11,7 @@ const t = useTranslations(lang);
 const areas = [
   {
     text: t("footer.area1"),
-    href: "#",
+    href: "https://www.angolatoday.ao/",
   },
   {
     text: t("footer.area2"),
@@ -19,11 +19,11 @@ const areas = [
   },
   {
     text: t("footer.area3"),
-    href: "#",
+    href: "https://boldlabs.ao/",
   },
   {
     text: t("footer.area4"),
-    href: "#",
+    href: "https://www.labuta.ao",
   },
 ];
 ---
@@ -40,7 +40,7 @@ const areas = [
           <li>
             <Link
               variant="ghost"
-              href="https://instagram.com"
+              href="https://www.instagram.com/boldmediaao"
               target="_blank"
               size="icon"
               className="p-0 size-auto"
@@ -51,7 +51,7 @@ const areas = [
           <li>
             <Link
               variant="ghost"
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/bold-media-holding-group"
               target="_blank"
               size="icon"
               className="p-0 size-auto"
@@ -67,7 +67,12 @@ const areas = [
           {
             areas.map(({ text, href }) => (
               <li>
-                <Link variant="ghost" className="p-0 h-auto" href={href}>
+                <Link
+                  variant="ghost"
+                  className="p-0 h-auto"
+                  target="_blank"
+                  href={href}
+                >
                   {text}
                 </Link>
               </li>
