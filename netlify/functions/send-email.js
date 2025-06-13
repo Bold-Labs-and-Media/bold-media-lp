@@ -22,20 +22,13 @@ export async function handler(event, context) {
       };
     }
 
-    console.log("Sending email with params:", {
-      from,
-      EMAIL_TO,
-      subject,
-      html,
-    });
-
-    const data = await resend.emails.send({ from, EMAIL_TO, subject, html });
+    const data = await resend.emails.send({ from, to:EMAIL_TO, subject, html });
 
     return {
       statusCode: 200,
       body: JSON.stringify({
         message: "Email enviado com sucesso!",
-        sent: { from, EMAIL_TO, subject, html },
+        sent: { from, to:EMAIL_TO, subject, html },
         resendResponse: data,
       }),
     };
