@@ -1,0 +1,28 @@
+[build]
+  command = "npm run build"
+  publish = "dist"                 # Pasta gerada pelo Astro
+  functions = "netlify/functions" # Pasta das serverless functions
+
+[dev]
+  command = "astro dev"
+  port = 8888
+  targetPort = 3000
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild" 
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+[context.production.environment]
+  NODE_ENV = "production"
+  API_URL = "https://api.exemplo.com"
