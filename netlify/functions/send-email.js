@@ -29,8 +29,7 @@ export async function handler(event, context) {
       html,
     });
 
-    const data = { from, EMAIL_TO, subject, html };
-    // const data = await resend.emails.send({ from, EMAIL_TO, subject, html });
+    const data = await resend.emails.send({ from, EMAIL_TO, subject, html });
 
     return {
       statusCode: 200,
