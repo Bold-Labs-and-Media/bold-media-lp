@@ -1,46 +1,15 @@
 ---
 import {
-  angolaTodayLogoImage,
-  boldEventsLogoImage,
+  AngolaTodayLogo,
+  BoldEventsLogo,
   boldLabsLogoImage,
-  labutaLogoImage,
+  LabutaLogo,
 } from "@/lib/assets";
-import { getLangFromUrl, useTranslations } from "@/lib/utils";
-import AreaItem from "./AreaItem.astro";
+import { addHexOpacity, getLangFromUrl, useTranslations } from "@/lib/utils";
+import { Image } from "astro:assets";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const areas = [
-  {
-    title: t("areas.value1-title"),
-    description: t("areas.value1-subtitle"),
-    color: "#e6761e",
-    logo: angolaTodayLogoImage,
-    link: "https://www.angolatoday.ao/",
-  },
-  {
-    title: t("areas.value2-title"),
-    description: t("areas.value2-subtitle"),
-    color: "#57f09f",
-    logo: boldLabsLogoImage,
-    link: "https://boldlabs.ao/",
-  },
-  {
-    title: t("areas.value3-title"),
-    description: t("areas.value3-subtitle"),
-    color: "#1a1a1c",
-    logo: boldEventsLogoImage,
-    link: "https://boldlabs.ao/",
-  },
-  {
-    title: t("areas.value4-title"),
-    description: t("areas.value4-subtitle"),
-    color: "#04342c",
-    logo: labutaLogoImage,
-    link: "https://www.labuta.ao",
-  },
-];
 ---
 
 <div id="areas" class="py-24 bg-grey-100/5">
@@ -57,7 +26,112 @@ const areas = [
       </p>
     </div>
     <ul class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-      {areas.map((area) => <AreaItem {...area} />)}
+      <li class="shadow-md rounded-md hover:scale-105 duration-300">
+        <a
+          href="https://www.angolatoday.ao/"
+          target="_blank"
+          class="flex flex-col md:flex-row bg-white h-full"
+        >
+          <div
+            style={`background-color: ${addHexOpacity("#e6761e", 10)}`}
+            class="flex justify-center py-6 md:py-0 flex-1 items-center"
+          >
+            <AngolaTodayLogo class="max-w-[120px]" />
+          </div>
+          <div class="p-6 flex-1">
+            <h3 style={`color: #e6761e`} class="font-bold text-2xl mb-4">
+              {t("areas.value1-title")}
+            </h3>
+            <p class="text-grey-100 text-sm">
+              {t("areas.value1-subtitle")}
+            </p>
+            <p class="md:hidden mt-2" style={`color: #e6761e`}>
+              {t("areas.see-more")}
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="shadow-md rounded-md hover:scale-105 duration-300">
+        <a
+          href="https://boldlabs.ao/"
+          target="_blank"
+          class="flex flex-col md:flex-row bg-white h-full"
+        >
+          <div
+            style={`background-color: ${addHexOpacity("#57f09f", 10)}`}
+            class="flex justify-center py-6 md:py-0 flex-1 items-center"
+          >
+            <Image
+              src={boldLabsLogoImage}
+              alt={t("areas.value2-title")}
+              width={120}
+              height={120}
+              class="max-w-[120px]"
+            />
+          </div>
+          <div class="p-6 flex-1">
+            <h3 style={`color: #57f09f`} class="font-bold text-2xl mb-4">
+              {t("areas.value2-title")}
+            </h3>
+            <p class="text-grey-100 text-sm">
+              {t("areas.value2-subtitle")}
+            </p>
+            <p class="md:hidden mt-2" style={`color: #57f09f`}>
+              {t("areas.see-more")}
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="shadow-md rounded-md hover:scale-105 duration-300">
+        <a
+          href="https://boldlabs.ao/"
+          target="_blank"
+          class="flex flex-col md:flex-row bg-white h-full"
+        >
+          <div
+            style={`background-color: ${addHexOpacity("#1a1a1c", 10)}`}
+            class="flex justify-center py-6 md:py-0 flex-1 items-center"
+          >
+            <BoldEventsLogo class="max-w-[60px]" />
+          </div>
+          <div class="p-6 flex-1">
+            <h3 style={`color: #1a1a1c`} class="font-bold text-2xl mb-4">
+              {t("areas.value3-title")}
+            </h3>
+            <p class="text-grey-100 text-sm">
+              {t("areas.value3-subtitle")}
+            </p>
+            <p class="md:hidden mt-2" style={`color: #1a1a1c`}>
+              {t("areas.see-more")}
+            </p>
+          </div>
+        </a>
+      </li>
+      <li class="shadow-md rounded-md hover:scale-105 duration-300">
+        <a
+          href="https://www.labuta.ao"
+          target="_blank"
+          class="flex flex-col md:flex-row bg-white h-full"
+        >
+          <div
+            style={`background-color: ${addHexOpacity("#04342c", 10)}`}
+            class="flex justify-center py-6 md:py-0 flex-1 items-center"
+          >
+            <LabutaLogo class="max-w-[120px]" />
+          </div>
+          <div class="p-6 flex-1">
+            <h3 style={`color: #04342c`} class="font-bold text-2xl mb-4">
+              {t("areas.value4-title")}
+            </h3>
+            <p class="text-grey-100 text-sm">
+              {t("areas.value4-subtitle")}
+            </p>
+            <p class="md:hidden mt-2" style={`color: #04342c`}>
+              {t("areas.see-more")}
+            </p>
+          </div>
+        </a>
+      </li>
     </ul>
   </section>
 </div>
