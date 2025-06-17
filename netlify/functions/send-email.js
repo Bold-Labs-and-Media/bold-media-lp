@@ -26,8 +26,7 @@ export async function handler(event, context) {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        message: "Email enviado com sucesso!",
+      body: JSON.stringify({ 
         sent: { from, to:EMAIL_TO, subject, html },
         resendResponse: data,
       }),
