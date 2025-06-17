@@ -30,7 +30,7 @@ export default function Strategies({ lang, content }: Props) {
         {content.map(({ value }, index) => {
           const Icon = icons[value as keyof typeof icons];
           return (
-            <TabsTrigger key={value} value={value}>
+            <TabsTrigger className="p-2 md:p-1" key={value} value={value}>
               {Icon && <Icon />}
               <p className="hidden md:block">
                 {t(`strategies.tab${index + 1}`)}
