@@ -148,6 +148,8 @@ export const ui: UI = {
     "contact.form-message": "Mensagem",
     "contact.form-message-placeholder": "Como podemos ajudar?",
     "contact.form-submit": "Enviar mensagem",
+    "contact.form-success": "Mensagem enviada com sucesso!",
+    "contact.form-error": "Ocorreu um erro ao enviar a mensagem.",
     "contact.email-title": "Contacto Direto",
     "contact.email-subtitle":
       "Tem alguma pergunta ou quer saber mais sobre nossas iniciativas? Entre em contato connosco diretamente.",

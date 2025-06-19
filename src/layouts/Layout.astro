@@ -4,6 +4,8 @@ import Header from "@/components/common/Header.astro";
 import { languages } from "@/i18n/ui";
 import { getLangFromUrl, useTranslations } from "@/lib/utils";
 import "@/styles/global.css";
+import { TableRowsSplit } from "lucide-react";
+import { Toaster } from "sonner";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -57,5 +59,6 @@ const t = useTranslations(lang);
     <Header />
     <slot />
     <Footer />
+    <Toaster richColors client:load />
   </body>
 </html>
