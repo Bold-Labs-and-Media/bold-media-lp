@@ -3,8 +3,9 @@ import Footer from "@/components/common/Footer.astro";
 import Header from "@/components/common/Header.astro";
 import { languages } from "@/i18n/ui";
 import { getLangFromUrl, useTranslations } from "@/lib/utils";
+import interFont from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2";
 import "@/styles/global.css";
-import { TableRowsSplit } from "lucide-react";
+
 import { Toaster } from "sonner";
 
 const lang = getLangFromUrl(Astro.url);
@@ -20,6 +21,13 @@ const t = useTranslations(lang);
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+      href={interFont}
+    />
     <meta name="description" content={t("seo.description")} />
     <meta name="keywords" content={t("seo.keywords")} />
     <meta name="robots" content="index, follow" />
