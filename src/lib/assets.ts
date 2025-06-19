@@ -9,3 +9,4 @@ export { default as LogoSVG } from "@/assets/svg/logo.svg";
 
 // Images
 export { default as boldLabsLogoImage } from "@/assets/images/bold-labs-logo.png";
+export { default as heroImage } from "@/assets/images/hero.jpeg";
