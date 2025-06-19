@@ -13,5 +13,8 @@ export async function sendEmail({ html }: EmailData) {
       "Content-Type": "application/json",
     },
   });
+  if (!response.ok) {
+    throw new Error("Failed to send email");
+  }
   return response.json();
 }
