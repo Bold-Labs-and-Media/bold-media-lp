@@ -9,6 +9,8 @@ type UI = Record<keyof typeof languages, Record<string, string>>;
 
 export const ui: UI = {
   pt: {
+    // Accessibility
+    "accessibility.language-picker": "Selecione o idioma",
     // SEO
     "seo.title": "Bold Media",
     "seo.description":
@@ -173,6 +175,8 @@ export const ui: UI = {
   },
 
   en: {
+    // Accessibility
+    "accessibility.language-picker": "Select Language",
     // SEO
     "seo.title": "Bold Media",
     "seo.description":
@@ -318,6 +322,8 @@ export const ui: UI = {
     "contact.form-message": "Message",
     "contact.form-message-placeholder": "How can we help?",
     "contact.form-submit": "Send Message",
+    "contact.form-success": "Message sent successfully!",
+    "contact.form-error": "An error occurred while sending the message.",
     "contact.email-title": "Direct Contact",
     "contact.email-subtitle":
       "Have a question or want to learn more about our initiatives? Reach out to us directly.",

@@ -1,9 +1,9 @@
+import { useTranslation } from "@/hooks/use-translation";
 import type { ui } from "@/i18n/ui";
 import { sendEmail } from "@/lib/api";
-import { buildSendMessageHTML, useTranslations } from "@/lib/utils";
+import { buildSendMessageHTML } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send } from "lucide-react";
-import { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -30,7 +30,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export default function SendMessageForm({ lang }: Props) {
-  const t = useCallback(useTranslations(lang), [lang]);
+  const t = useTranslation(lang);
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {

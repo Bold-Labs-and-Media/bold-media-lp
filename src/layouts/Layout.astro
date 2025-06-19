@@ -9,11 +9,12 @@ import "@/styles/global.css";
 import { Toaster } from "sonner";
 
 const lang = getLangFromUrl(Astro.url);
+const { origin } = Astro.url;
 const t = useTranslations(lang);
 ---
 
 <!doctype html>
-<html lang="pt">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -47,7 +48,7 @@ const t = useTranslations(lang);
     </script>
     {
       Object.keys(languages).map((code) => (
-        <link rel="alternate" hreflang={code} href={`/${code}`} />
+        <link rel="alternate" hreflang={code} href={`${origin}/${code}`} />
       ))
     }
     <!-- Open Graph -->

@@ -1,4 +1,5 @@
-import { defaultLang, languages } from "@/i18n/ui";
+import { useTranslation } from "@/hooks/use-translation";
+import { defaultLang, languages, ui } from "@/i18n/ui";
 import { ChevronDown, Languages } from "lucide-react";
 import { Button } from "../ui/button";
 import {
@@ -8,10 +9,16 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 
-export default function LanguageSelector() {
+type Props = {
+  lang: keyof typeof ui;
+};
+
+export default function LanguageSelector({ lang }: Props) {
+  const t = useTranslation(lang);
+
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger title={t("accessibility.language-picker")} asChild>
         <Button
           popoverTarget="languages"
           size="icon"

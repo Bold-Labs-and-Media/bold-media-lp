@@ -26,7 +26,7 @@ const t = useTranslations(lang);
         <Link variant="ghost" className="p-0 h-auto" href="#contact"
           >{t("header.nav4")}</Link
         >
-        <LanguageSelector client:load />
+        <LanguageSelector lang={lang} client:load />
         <Link href="#contact" className="w-fit mx-auto">{t("header.nav5")}</Link
         >
       </NavMenu>
