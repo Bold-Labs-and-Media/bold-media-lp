@@ -1,6 +1,7 @@
 ---
+import { languages } from "@/i18n/ui";
 import { LogoSVG } from "@/lib/assets";
-import { getLangFromUrl, useTranslations } from "@/lib/utils";
+import { cn, getLangFromUrl, useTranslations } from "@/lib/utils";
 import LanguageSelector from "../interactive/language-selector";
 import NavMenu from "../interactive/nav-menu";
 import { Link } from "../ui/link";
@@ -26,7 +27,21 @@ const t = useTranslations(lang);
         <Link variant="ghost" className="p-0 h-auto" href="#contact"
           >{t("header.nav4")}</Link
         >
-        <LanguageSelector lang={lang} client:load />
+        <li class="justify-center gap-5 items-center flex md:hidden">
+          {
+            Object.entries(languages).map(([code]) => (
+              <a
+                class={cn(code == lang && "text-primary")}
+                href={`/${code == "pt" ? "" : code}`}
+              >
+                {code.toUpperCase()}
+              </a>
+            ))
+          }
+        </li>
+        <div class="hidden md:block">
+          <LanguageSelector lang={lang} client:load />
+        </div>
         <Link href="#contact" className="w-fit mx-auto">{t("header.nav5")}</Link
         >
       </NavMenu>
